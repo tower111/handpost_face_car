@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content=:text/html; charset=utf-8">"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote-controlled raspberry pie</title>
+    <link href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <style type="text/css">
+        #front {
+            margin-left: 55px;
+            margin-bottom: 3px;
+        }
+        #rear{
+            margin-top: 3px;
+            margin-left: 55px;
+        }
+        .btn{
+             background: #62559f;
+            }
+    </style>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                $.post("/cmd",this.id,function(data,status){});
+            });
+        });
+ 
+    </script>
+</head>
+<body>
+<div id="container" class="container">
+    
+    <div>
+        <button id="front" class="btn btn-lg btn-primary glyphicon glyphicon-circle-arrow-up"></button>
+    </div>
+    <div>
+ 
+        <button id='leftFront' class="btn btn-lg btn-primary glyphicon glyphicon-circle-arrow-left"></button>
+        <button id='stop' class="btn btn-lg btn-primary glyphicon glyphicon-stop"></button>
+        <button id='rightFront' class="btn btn-lg btn-primary glyphicon glyphicon-circle-arrow-right"></button>
+    </div>
+    <div>
+        <button id='rear' class="btn btn-lg btn-primary glyphicon glyphicon-circle-arrow-down"></button>
+    </div>
+     <div>
+        <button id='leftRear' class="btn btn-lg btn-primary glyphicon">  Left  </button>
+        <button id='rightRear' class="btn btn-lg btn-primary glyphicon">  Right  </button>
+    <div>
+</div>
+ 
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>
